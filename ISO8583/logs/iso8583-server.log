@@ -1,0 +1,64 @@
+2026-09-14T14:04:22.939-05:00  INFO 9436 --- [ISO8583] [Test worker] servidor.ISO8583.IdempotencyFlowTest     : Starting IdempotencyFlowTest using Java 21.0.12.1 with PID 9436 (started by Ing Yair in C:\Users\Ing Yair\Downloads\ISO8583\ISO8583)
+2026-09-14T14:04:22.942-05:00  INFO 9436 --- [ISO8583] [Test worker] servidor.ISO8583.IdempotencyFlowTest     : The following 1 profile is active: "test"
+2026-09-14T14:04:25.073-05:00  INFO 9436 --- [ISO8583] [Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=4536827e-de54-3f0a-ac83-891fca74f3c0
+2026-09-14T14:04:29.696-05:00  INFO 9436 --- [ISO8583] [Test worker] servidor.ISO8583.server.IsoTcpServer     : Servidor TCP ISO 8583 iniciado en el puerto 9999
+2026-09-14T14:04:29.744-05:00  INFO 9436 --- [ISO8583] [Test worker] servidor.ISO8583.IdempotencyFlowTest     : Started IdempotencyFlowTest in 7.859 seconds (process running for 12.999)
+2026-09-14T14:04:33.613-05:00  INFO 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Notificación recibida del cliente: Compra confirmada exitosamente 
+2026-09-14T14:04:33.613-05:00  INFO 9436 --- [ISO8583] [Test worker] s.I.service.ClientSimulatorService       : Mensaje 0210 enviado al servidor 
+2026-09-14T14:04:33.629-05:00  INFO 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Retornando respuesta cacheada para transacción duplicada | STAN: 076384
+2026-09-14T14:04:33.636-05:00  INFO 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Retornando respuesta cacheada para transacción duplicada | STAN: 076384
+2026-09-14T14:04:33.651-05:00  INFO 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Retornando respuesta cacheada para transacción duplicada | STAN: 076384
+2026-09-14T14:04:33.654-05:00  WARN 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.service.RateLimiterService     : Límite superado para terminal
+2026-09-14T14:04:33.655-05:00  WARN 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Rate limit alcanzado para terminal: TERM0001 con STAN: 076384
+2026-09-14T14:04:33.759-05:00  INFO 9436 --- [ISO8583] [Test worker] s.I.service.ClientSimulatorService       : Mensaje 0210 enviado al servidor 
+2026-09-14T14:04:33.760-05:00  INFO 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Notificación recibida del cliente: Compra confirmada exitosamente 
+2026-09-14T14:04:33.772-05:00  INFO 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Retornando respuesta cacheada para transacción duplicada | STAN: 043879
+2026-09-14T14:04:33.791-05:00  WARN 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.service.CoreBankingService     : Cuenta 9999999999999999 no encontrada: Tarjeta o cuenta no encontrada.
+2026-09-14T14:04:33.810-05:00  INFO 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Retornando respuesta cacheada para transacción duplicada | STAN: 808089
+2026-09-14T14:04:33.815-05:00  WARN 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.service.CoreBankingService     : Cuenta 9999999999999999 no encontrada: Tarjeta o cuenta no encontrada.
+2026-09-14T14:04:33.836-05:00  INFO 9436 --- [ISO8583] [Test worker] s.I.service.ClientSimulatorService       : Mensaje 0210 enviado al servidor 
+2026-09-14T14:04:33.837-05:00  INFO 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Notificación recibida del cliente: Compra confirmada exitosamente 
+2026-09-14T14:04:33.842-05:00  INFO 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Retornando respuesta cacheada para transacción duplicada | STAN: 200445
+2026-09-14T14:04:34.071-05:00  INFO 9436 --- [ISO8583] [Test worker] s.I.service.ClientSimulatorService       : Mensaje 0210 enviado al servidor 
+2026-09-14T14:04:34.073-05:00  INFO 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Notificación recibida del cliente: Compra confirmada exitosamente 
+2026-09-14T14:04:34.091-05:00  INFO 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.service.CoreBankingService     : Solicitando en curso...
+2026-09-14T14:04:34.216-05:00  INFO 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.service.CoreBankingService     : Reverso aplicado exitosamente a PAN 4000000000000001
+2026-09-14T14:04:34.217-05:00  INFO 9436 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Reverso procesado | STAN=458738 | RC=00
+2026-09-14T14:04:34.240-05:00  INFO 9436 --- [ISO8583] [Test worker] s.I.service.ClientSimulatorService       : Mensaje 0410 enviado al servidor 
+2026-09-14T14:04:34.296-05:00  INFO 9436 --- [ISO8583] [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [servidor.ISO8583.Iso8583ApplicationTests]: Iso8583ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-09-14T14:04:34.302-05:00  INFO 9436 --- [ISO8583] [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration servidor.ISO8583.Iso8583Application for test class servidor.ISO8583.Iso8583ApplicationTests
+2026-09-14T14:04:34.308-05:00  INFO 9436 --- [ISO8583] [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [servidor.ISO8583.Iso8583ApplicationTests]: Iso8583ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-09-14T14:04:34.312-05:00  INFO 9436 --- [ISO8583] [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration servidor.ISO8583.Iso8583Application for test class servidor.ISO8583.Iso8583ApplicationTests
+2026-09-14T14:04:34.380-05:00  INFO 9436 --- [ISO8583] [SpringApplicationShutdownHook] servidor.ISO8583.server.IsoTcpServer     : Deteniendo servidor TCP ISO 8583...
+2026-09-14T14:04:34.386-05:00  INFO 9436 --- [ISO8583] [SpringApplicationShutdownHook] servidor.ISO8583.server.IsoTcpServer     : Servidor TCP ISO 8583 detenido.
+2026-09-14T14:06:55.220-05:00  INFO 11708 --- [ISO8583] [Test worker] servidor.ISO8583.IdempotencyFlowTest     : Starting IdempotencyFlowTest using Java 21.0.12.1 with PID 11708 (started by Ing Yair in C:\Users\Ing Yair\Downloads\ISO8583\ISO8583)
+2026-09-14T14:06:55.226-05:00  INFO 11708 --- [ISO8583] [Test worker] servidor.ISO8583.IdempotencyFlowTest     : The following 1 profile is active: "test"
+2026-09-14T14:07:01.228-05:00  INFO 11708 --- [ISO8583] [Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=4536827e-de54-3f0a-ac83-891fca74f3c0
+2026-09-14T14:07:09.832-05:00  INFO 11708 --- [ISO8583] [Test worker] servidor.ISO8583.server.IsoTcpServer     : Servidor TCP ISO 8583 iniciado en el puerto 9999
+2026-09-14T14:07:09.968-05:00  INFO 11708 --- [ISO8583] [Test worker] servidor.ISO8583.IdempotencyFlowTest     : Started IdempotencyFlowTest in 15.956 seconds (process running for 22.658)
+2026-09-14T14:07:15.748-05:00  INFO 11708 --- [ISO8583] [Test worker] s.I.service.ClientSimulatorService       : Mensaje 0210 enviado al servidor 
+2026-09-14T14:07:15.748-05:00  INFO 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Notificación recibida del cliente: Compra confirmada exitosamente 
+2026-09-14T14:07:15.763-05:00  INFO 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Retornando respuesta cacheada para transacción duplicada | STAN: 991508
+2026-09-14T14:07:15.770-05:00  INFO 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Retornando respuesta cacheada para transacción duplicada | STAN: 991508
+2026-09-14T14:07:15.777-05:00  INFO 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Retornando respuesta cacheada para transacción duplicada | STAN: 991508
+2026-09-14T14:07:15.780-05:00  WARN 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.service.RateLimiterService     : Límite superado para terminal
+2026-09-14T14:07:15.781-05:00  WARN 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Rate limit alcanzado para terminal: TERM0001 con STAN: 991508
+2026-09-14T14:07:15.884-05:00  INFO 11708 --- [ISO8583] [Test worker] s.I.service.ClientSimulatorService       : Mensaje 0210 enviado al servidor 
+2026-09-14T14:07:15.886-05:00  INFO 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Notificación recibida del cliente: Compra confirmada exitosamente 
+2026-09-14T14:07:15.897-05:00  INFO 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Retornando respuesta cacheada para transacción duplicada | STAN: 411820
+2026-09-14T14:07:15.942-05:00  WARN 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.service.CoreBankingService     : Cuenta 9999999999999999 no encontrada: Tarjeta o cuenta no encontrada.
+2026-09-14T14:07:15.984-05:00  INFO 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Retornando respuesta cacheada para transacción duplicada | STAN: 548622
+2026-09-14T14:07:15.993-05:00  WARN 11708 --- [ISO8583] [ThreadPool.PooledThread-1-running] s.ISO8583.service.CoreBankingService     : Cuenta 9999999999999999 no encontrada: Tarjeta o cuenta no encontrada.
+2026-09-14T14:07:16.050-05:00  INFO 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Retornando respuesta cacheada para transacción duplicada | STAN: 860512
+2026-09-14T14:07:16.145-05:00  INFO 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Notificación recibida del cliente: Compra confirmada exitosamente 
+2026-09-14T14:07:16.145-05:00  INFO 11708 --- [ISO8583] [Test worker] s.I.service.ClientSimulatorService       : Mensaje 0210 enviado al servidor 
+2026-09-14T14:07:16.264-05:00  INFO 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.service.CoreBankingService     : Solicitando en curso...
+2026-09-14T14:07:16.291-05:00  INFO 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.service.CoreBankingService     : Reverso aplicado exitosamente a PAN 4000000000000001
+2026-09-14T14:07:16.291-05:00  INFO 11708 --- [ISO8583] [ThreadPool.PooledThread-0-running] s.ISO8583.server.IsoMessageHandler       : Reverso procesado | STAN=163555 | RC=00
+2026-09-14T14:07:16.306-05:00  INFO 11708 --- [ISO8583] [Test worker] s.I.service.ClientSimulatorService       : Mensaje 0410 enviado al servidor 
+2026-09-14T14:07:16.471-05:00  INFO 11708 --- [ISO8583] [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [servidor.ISO8583.Iso8583ApplicationTests]: Iso8583ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-09-14T14:07:16.475-05:00  INFO 11708 --- [ISO8583] [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration servidor.ISO8583.Iso8583Application for test class servidor.ISO8583.Iso8583ApplicationTests
+2026-09-14T14:07:16.480-05:00  INFO 11708 --- [ISO8583] [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [servidor.ISO8583.Iso8583ApplicationTests]: Iso8583ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-09-14T14:07:16.483-05:00  INFO 11708 --- [ISO8583] [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration servidor.ISO8583.Iso8583Application for test class servidor.ISO8583.Iso8583ApplicationTests
+2026-09-14T14:07:16.559-05:00  INFO 11708 --- [ISO8583] [SpringApplicationShutdownHook] servidor.ISO8583.server.IsoTcpServer     : Deteniendo servidor TCP ISO 8583...
+2026-09-14T14:07:16.565-05:00  INFO 11708 --- [ISO8583] [SpringApplicationShutdownHook] servidor.ISO8583.server.IsoTcpServer     : Servidor TCP ISO 8583 detenido.

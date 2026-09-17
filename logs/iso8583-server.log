@@ -1,0 +1,16 @@
+2026-09-16T08:30:53.900-05:00  INFO 12732 --- [ISO8583] [main] servidor.ISO8583.Iso8583Application      : Starting Iso8583Application using Java 21.0.12.1 with PID 12732 (C:\Users\Ing Yair\Downloads\ISO8583\ISO8583\build\classes\java\main started by Ing Yair in C:\Users\Ing Yair\Downloads\ISO8583)
+2026-09-16T08:30:53.911-05:00  INFO 12732 --- [ISO8583] [main] servidor.ISO8583.Iso8583Application      : No active profile set, falling back to 1 default profile: "default"
+2026-09-16T08:30:55.615-05:00  INFO 12732 --- [ISO8583] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1d811685-4001-3b03-bae5-8c76db94532a
+2026-09-16T08:30:58.167-05:00  INFO 12732 --- [ISO8583] [main] servidor.ISO8583.server.IsoTcpServer     : Servidor TCP ISO 8583 iniciado en el puerto 9999
+2026-09-16T08:30:58.182-05:00  INFO 12732 --- [ISO8583] [main] servidor.ISO8583.Iso8583Application      : Started Iso8583Application in 7.248 seconds (process running for 9.812)
+2026-09-16T08:30:59.401-05:00  INFO 12732 --- [ISO8583] [main] s.I.service.watchdog.WatchdogService     : Servidor ISO 8583 ACTIVO en localhost:9999
+2026-09-16T08:32:38.232-05:00  INFO 12732 --- [ISO8583] [scheduling-1] s.I.service.watchdog.WatchdogService     : Servidor ISO 8583 ACTIVO en localhost:9999
+2026-09-16T08:32:38.233-05:00  INFO 12732 --- [ISO8583] [scheduling-1] s.I.service.watchdog.WatchdogService     : Servidor estable. Flujo de transacciones permitido.
+2026-09-16T11:10:41.429-05:00  INFO 12732 --- [ISO8583] [scheduling-1] s.I.service.watchdog.WatchdogService     : Servidor ISO 8583 ACTIVO en localhost:9999
+2026-09-16T11:10:41.436-05:00  INFO 12732 --- [ISO8583] [scheduling-1] s.I.service.watchdog.WatchdogService     : Servidor estable. Flujo de transacciones permitido.
+2026-09-16T14:39:49.118-05:00  INFO 12732 --- [ISO8583] [scheduling-1] s.I.service.watchdog.WatchdogService     : Servidor ISO 8583 ACTIVO en localhost:9999
+2026-09-16T14:39:49.139-05:00  INFO 12732 --- [ISO8583] [scheduling-1] s.I.service.watchdog.WatchdogService     : Servidor estable. Flujo de transacciones permitido.
+2026-09-16T16:02:38.208-05:00  INFO 12732 --- [ISO8583] [scheduling-1] s.I.service.watchdog.WatchdogService     : Servidor ISO 8583 ACTIVO en localhost:9999
+2026-09-16T16:02:38.212-05:00  INFO 12732 --- [ISO8583] [scheduling-1] s.I.service.watchdog.WatchdogService     : Servidor estable. Flujo de transacciones permitido.
+2026-09-16T17:10:53.272-05:00  INFO 12732 --- [ISO8583] [SpringApplicationShutdownHook] servidor.ISO8583.server.IsoTcpServer     : Deteniendo servidor TCP ISO 8583...
+2026-09-16T17:10:53.298-05:00  INFO 12732 --- [ISO8583] [SpringApplicationShutdownHook] servidor.ISO8583.server.IsoTcpServer     : Servidor TCP ISO 8583 detenido.

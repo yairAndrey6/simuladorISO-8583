@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE isopackager [
+  <!ELEMENT isopackager (isofield*,isofieldpackager*)*>
+  <!ATTLIST isopackager maxValidField CDATA #IMPLIED>
+  <!ATTLIST isopackager bitmapField CDATA #IMPLIED>
+  <!ATTLIST isopackager emitBitmap (true|false) "true">
+  <!ATTLIST isopackager header CDATA #IMPLIED>
+  <!ELEMENT isofield (#PCDATA)>
+  <!ATTLIST isofield
+    id CDATA #REQUIRED
+    length CDATA #REQUIRED
+    name CDATA #REQUIRED
+    class CDATA #REQUIRED
+    pad CDATA #IMPLIED>
+  <!ELEMENT isofieldpackager (isofield*,isofieldpackager*)*>
+  <!ATTLIST isofieldpackager
+    id CDATA #REQUIRED
+    length CDATA #REQUIRED
+    name CDATA #REQUIRED
+    class CDATA #REQUIRED
+    packager CDATA #REQUIRED
+    emitBitmap (true|false) "true"
+    maxValidField CDATA #IMPLIED
+    bitmapField CDATA #IMPLIED
+    header CDATA #IMPLIED>
+]>
+<!--
+    PACKAGER ISO 8583 - ASCII
+    Define la estructura de cada campo del mensaje:
+    - id     : número de campo (0-128)
+    - length : longitud máxima del campo en caracteres
+    - name   : descripción del campo
+    - class  : clase jPOS que sabe codificar/decodificar ese campo
+
+    Tipos de campo más comunes:
+      IFA_NUMERIC      → numérico de longitud fija (padded con ceros a la izquierda)
+      IFA_ALPHA        → alfanumérico de longitud fija (padded con espacios a la derecha)
+      IFA_ALPHANUMERIC → alfanumérico de longitud fija
+      IFA_LLVAR        → variable, longitud indicada en 2 dígitos ASCII (ej: "19" + datos)
+      IFA_LLLVAR       → variable, longitud indicada en 3 dígitos ASCII (ej: "019" + datos)
+      IFA_BITMAP       → bitmap de 64 bits en hex ASCII (16 chars) — indica campos presentes
+-->
+<isopackager>
+
+    <!-- Campo 0: MTI — Message Type Indicator (ej: "0200") -->
+    <isofield id="0"  length="4"   name="MESSAGE TYPE INDICATOR"       class="org.jpos.iso.IFA_NUMERIC"/>
+
+    <!-- Campo 1: Bitmap primario (16 hex chars = 64 bits, bit N=1 si el campo N está presente) -->
+    <isofield id="1"  length="16"  name="BIT MAP"                      class="org.jpos.iso.IFA_BITMAP"/>
+
+    <!-- Campo 2: PAN — Primary Account Number (número de tarjeta, LLVAR hasta 19 dígitos) -->
+    <isofield id="2"  length="19"  name="PAN"                          class="org.jpos.iso.IFA_LLNUM"/>
+
+    <!-- Campo 3: Processing Code (6 dígitos: primeros 2 = tipo, sig 2 = cuenta débito, últimos 2 = cuenta crédito) -->
+    <!-- Ej: 000000=compra, 200000=devolución, 010000=retiro -->
+    <isofield id="3"  length="6"   name="PROCESSING CODE"              class="org.jpos.iso.IFA_NUMERIC"/>
+
+    <!-- Campo 4: Monto de la transacción (12 dígitos, los últimos 2 son decimales implícitos) -->
+    <isofield id="4"  length="12"  name="AMOUNT TRANSACTION"           class="org.jpos.iso.IFA_NUMERIC"/>
+
+    <!-- Campo 7: Fecha y hora de transmisión (MMDDHHmmss) -->
+    <isofield id="7"  length="10"  name="TRANSMISSION DATE TIME"       class="org.jpos.iso.IFA_NUMERIC"/>
+
+    <!-- Campo 11: STAN — System Trace Audit Number (número de secuencia único por terminal) -->
+    <isofield id="11" length="6"   name="STAN"                         class="org.jpos.iso.IFA_NUMERIC"/>
+
+    <!-- Campo 12: Hora local de la transacción (HHmmss) -->
+    <isofield id="12" length="6"   name="TIME LOCAL TRANSACTION"       class="org.jpos.iso.IFA_NUMERIC"/>
+
+    <!-- Campo 13: Fecha local de la transacción (MMDD) -->
+    <isofield id="13" length="4"   name="DATE LOCAL TRANSACTION"       class="org.jpos.iso.IFA_NUMERIC"/>
+
+    <!-- Campo 14: Fecha de expiración de la tarjeta (YYMM) -->
+    <isofield id="14" length="4"   name="DATE EXPIRATION"              class="org.jpos.iso.IFA_NUMERIC"/>
+
+    <!-- Campo 22: POS Entry Mode (cómo se leyó la tarjeta: 051=chip, 021=banda, 010=manual) -->
+    <isofield id="22" length="3"   name="POS ENTRY MODE"               class="org.jpos.iso.IFA_NUMERIC"/>
+
+    <!-- Campo 25: POS Condition Code -->
+    <isofield id="25" length="2"   name="POS CONDITION CODE"           class="org.jpos.iso.IFA_NUMERIC"/>
+
+    <!-- Campo 32: Acquiring Institution ID Code (LLVAR, ID del banco adquirente) -->
+    <isofield id="32" length="11"  name="ACQUIRING INSTITUTION ID"     class="org.jpos.iso.IFA_LLNUM"/>
+
+    <!-- Campo 35: Track 2 Data (datos de banda magnética, LLVAR) -->
+    <isofield id="35" length="37"  name="TRACK 2 DATA"                 class="org.jpos.iso.IFA_LLCHAR"/>
+
+    <!-- Campo 37: RRN — Retrieval Reference Number (12 chars, ID de la transacción del lado del adquirente) -->
+    <isofield id="37" length="12"  name="RETRIEVAL REFERENCE NUMBER"   class="org.jpos.iso.IF_CHAR"/>
+
+    <!-- Campo 38: Código de autorización (lo genera el emisor cuando aprueba) -->
+    <isofield id="38" length="6"   name="AUTHORIZATION ID RESPONSE"    class="org.jpos.iso.IF_CHAR"/>
+
+    <!-- Campo 39: Response Code (00=Aprobado, 05=No Honor, 51=Fondos insuficientes, etc.) -->
+    <isofield id="39" length="2"   name="RESPONSE CODE"                class="org.jpos.iso.IF_CHAR"/>
+
+    <!-- Campo 41: Terminal ID (identificador del POS/ATM, 8 chars) -->
+    <isofield id="41" length="8"   name="CARD ACCEPTOR TERMINAL ID"    class="org.jpos.iso.IF_CHAR"/>
+
+    <!-- Campo 42: Card Acceptor ID Code (identificador del comercio, 15 chars) -->
+    <isofield id="42" length="15"  name="CARD ACCEPTOR ID CODE"        class="org.jpos.iso.IF_CHAR"/>
+
+    <!-- Campo 43: Nombre y ubicación del comercio (40 chars) -->
+    <isofield id="43" length="40"  name="CARD ACCEPTOR NAME LOCATION"  class="org.jpos.iso.IF_CHAR"/>
+
+    <!-- Campo 49: Código de moneda de la transacción (ISO 4217: 484=MXN, 840=USD, 978=EUR) -->
+    <isofield id="49" length="3"   name="CURRENCY CODE TRANSACTION"    class="org.jpos.iso.IFA_NUMERIC"/>
+
+    <!-- Campo 55: ICC Data — datos del chip EMV (LLLVAR, hasta 999 bytes) -->
+    <isofield id="55" length="999" name="ICC DATA EMV"                 class="org.jpos.iso.IFA_LLLCHAR"/>
+
+    <!-- Campo 60: Reservado privado (campo libre para datos adicionales, LLLVAR) -->
+    <isofield id="60" length="999" name="RESERVED PRIVATE 60"         class="org.jpos.iso.IFA_LLLCHAR"/>
+
+    <!-- Campo 63: Reservado privado (campo libre para datos adicionales, LLLVAR) -->
+    <isofield id="63" length="999" name="RESERVED PRIVATE 63"         class="org.jpos.iso.IFA_LLLCHAR"/>
+
+</isopackager>
